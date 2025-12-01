@@ -1,6 +1,6 @@
 # Product Backlog - Sistema Hotel Descanso Garantido
 
-## 📋 Backlog Inicial
+## Backlog Inicial
 
 ### **Épico 1: Estrutura Base**
 - [ ] Criar estrutura de diretórios
