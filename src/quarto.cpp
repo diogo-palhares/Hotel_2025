@@ -197,19 +197,19 @@ void listarQuartos() {
     arquivo.close();
     
     if (!encontrouQuartos) {
-        std::cout << "\n🏨 Nenhum quarto cadastrado no sistema.\n";
-        std::cout << "💡 Use a opção 3 do menu principal para cadastrar quartos.\n";
+        std::cout << "\n Nenhum quarto cadastrado no sistema.\n";
+        std::cout << "Use a opção 3 do menu principal para cadastrar quartos.\n";
     } else {
         std::cout << std::string(47, '=') << "\n";
-        std::cout << "📊 ESTATÍSTICAS DOS QUARTOS:\n";
-        std::cout << "🏨 Total de quartos: " << contador << "\n";
-        std::cout << "🟢 Quartos disponíveis: " << quartosDisponiveis << "\n";
-        std::cout << "🔴 Quartos ocupados: " << quartosOcupados << "\n";
-        std::cout << "💰 Valor médio da diária: R$ " << std::fixed 
+        std::cout << "ESTATÍSTICAS DOS QUARTOS:\n";
+        std::cout << "Total de quartos: " << contador << "\n";
+        std::cout << "Quartos disponíveis: " << quartosDisponiveis << "\n";
+        std::cout << "Quartos ocupados: " << quartosOcupados << "\n";
+        std::cout << "Valor médio da diária: R$ " << std::fixed 
                   << std::setprecision(2) << (valorMedio / contador) << "\n";
         
         if (quartosDisponiveis > 0) {
-            std::cout << "✅ Taxa de ocupação: " << std::fixed 
+            std::cout << "Taxa de ocupação: " << std::fixed 
                       << std::setprecision(1) 
                       << ((float)quartosOcupados / contador * 100) << "%\n";
         }
