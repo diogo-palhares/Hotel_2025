@@ -24,6 +24,10 @@ void Quarto::serialize(std::ofstream& file) const {
     file.write(reinterpret_cast<const char*>(this), sizeof(Quarto));
 }
 
+void Quarto::serialize(std::fstream& file) const {
+    file.write(reinterpret_cast<const char*>(this), sizeof(Quarto));
+}
+
 void Quarto::deserialize(std::ifstream& file) {
     file.read(reinterpret_cast<char*>(this), sizeof(Quarto));
 }
@@ -135,7 +139,7 @@ bool atualizarStatusQuarto(int numero, StatusQuarto novoStatus) {
             
             // Atualizar status
             quarto.status = novoStatus;
-            quarto.serialize(arquivo);
+            quarto.serialize(arquivo);  // Agora funciona com fstream
             arquivo.close();
             return true;
         }

@@ -24,6 +24,7 @@ struct Quarto {
     
     // Funções de serialização para arquivo binário
     void serialize(std::ofstream& file) const;
+    void serialize(std::fstream& file) const;  // Sobrecarga para fstream
     void deserialize(std::ifstream& file);
     
     // Função para exibir dados
