@@ -1,6 +1,6 @@
 # Documentação Técnica
 
-## 📋 Documentos Disponíveis
+## Documentos Disponíveis
 
 - [Arquitetura](arquitetura.md) - Estrutura do sistema
 - [Funções](funcoes.md) - Referência das funções principais
@@ -8,7 +8,7 @@
 - [Manual](manual.md) - Guia do usuário
 - [Testes](testes.md) - Casos de teste
 
-## 🎯 Visão Geral
+## Visão Geral
 
 Sistema de hotel em C++11 com:
 - **4 entidades**: Cliente, Funcionário, Quarto, Estadia
@@ -16,7 +16,7 @@ Sistema de hotel em C++11 com:
 - **Interface**: Menu textual
 - **Testes**: 15 testes automatizados
 
-## 🏗️ Arquitetura
+## Arquitetura
 
 ```
 Interface (main.cpp) 
