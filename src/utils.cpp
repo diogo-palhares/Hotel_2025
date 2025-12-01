@@ -162,9 +162,9 @@ void exibirCabecalho(const std::string& titulo) {
 
 void exibirMensagem(const std::string& mensagem, bool erro) {
     if (erro) {
-        std::cout << "\n❌ ERRO: " << mensagem << "\n";
+        std::cout << "\nERRO: " << mensagem << "\n";
     } else {
-        std::cout << "\n✅ " << mensagem << "\n";
+        std::cout << "\n " << mensagem << "\n";
     }
 }
 
