@@ -1,6 +1,6 @@
 # Testes Automatizados - Sistema Hotel Descanso Garantido
 
-## 🧪 Como Executar
+## Como Executar
 
 ### **Método Recomendado:**
 ```bash
@@ -16,7 +16,7 @@ clang++ -std=c++11 -Wall -Wextra -O2 -o testes tests/main_testes.cpp tests/teste
 ./testes
 ```
 
-## 📊 Testes Implementados (15 total)
+## Testes Implementados (15 total)
 
 ### **Testes de Arquivo:**
 1. **Inicialização de Arquivos** - Criação dos arquivos .dat
@@ -43,21 +43,21 @@ clang++ -std=c++11 -Wall -Wextra -O2 -o testes tests/main_testes.cpp tests/teste
 14. **Cálculo de Diárias** - Algoritmo de datas
 15. **Serialização** - Conversão binária
 
-## 📄 Relatórios
+## Relatórios
 
 - **Localização:** `tests/relatorios/relatorio-testes.md`
 - **Formato:** Markdown com tabelas
 - **Conteúdo:** Resumo, detalhes e conclusões
 - **Métricas:** Taxa de sucesso e tempo de execução
 
-## ⚠️ Observações Importantes
+## Observações Importantes
 
 - **Limpeza de dados:** Os testes removem arquivos existentes
 - **Execução:** Deve ser feita a partir da pasta `tests/`
 - **Dependências:** Requer compilador C++11
 - **Plataforma:** Funciona em Windows, macOS e Linux
 
-## 🔧 Solução de Problemas
+## Solução de Problemas
 
 **Erro de compilação:**
 ```bash
