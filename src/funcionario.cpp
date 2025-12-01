@@ -113,21 +113,39 @@ Funcionario buscarFuncionario(int codigo) {
 
 // Função para listar funcionários
 void listarFuncionarios() {
-    exibirCabecalho("LISTA DE FUNCIONÁRIOS");
+    exibirCabecalho("LISTA DE FUNCIONÁRIOS CADASTRADOS");
     
     std::ifstream arquivo(ARQUIVO_FUNCIONARIOS, std::ios::binary);
     if (!arquivo.is_open()) {
         exibirMensagem("Erro ao abrir arquivo de funcionários.", true);
+        pausar();
         return;
     }
     
     Funcionario funcionario;
     bool encontrouFuncionarios = false;
+    int contador = 0;
+    float totalSalarios = 0.0f;
+    
+    // Cabeçalho da tabela
+    std::cout << std::left << std::setw(8) << "Código" 
+              << std::setw(25) << "Nome" 
+              << std::setw(20) << "Cargo"
+              << std::setw(15) << "Telefone" 
+              << std::setw(12) << "Salário" << "\n";
+    std::cout << std::string(80, '=') << "\n";
     
     while (arquivo.read(reinterpret_cast<char*>(&funcionario), sizeof(Funcionario))) {
         if (funcionario.validar()) {
-            std::cout << "----------------------------------------\n";
-            funcionario.exibir();
+            contador++;
+            totalSalarios += funcionario.salario;
+            
+            std::cout << std::left << std::setw(8) << funcionario.codigo
+                      << std::setw(25) << funcionario.nome
+                      << std::setw(20) << funcionario.cargo
+                      << std::setw(15) << funcionario.telefone
+                      << "R$ " << std::fixed << std::setprecision(2) 
+                      << std::setw(9) << funcionario.salario << "\n";
             encontrouFuncionarios = true;
         }
     }
@@ -135,7 +153,15 @@ void listarFuncionarios() {
     arquivo.close();
     
     if (!encontrouFuncionarios) {
-        std::cout << "Nenhum funcionário cadastrado.\n";
+        std::cout << "\n👥 Nenhum funcionário cadastrado no sistema.\n";
+        std::cout << "💡 Use a opção 2 do menu principal para cadastrar funcionários.\n";
+    } else {
+        std::cout << std::string(80, '=') << "\n";
+        std::cout << "📊 Total de funcionários: " << contador << "\n";
+        std::cout << "💰 Folha de pagamento total: R$ " << std::fixed 
+                  << std::setprecision(2) << totalSalarios << "\n";
+        std::cout << "📈 Salário médio: R$ " << std::fixed 
+                  << std::setprecision(2) << (totalSalarios / contador) << "\n";
     }
     
     pausar();

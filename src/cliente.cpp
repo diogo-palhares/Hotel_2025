@@ -4,6 +4,7 @@
 #include <fstream>
 #include <string>
 #include <cstring>
+#include <iomanip>
 
 // Implementação dos construtores
 Cliente::Cliente() {
@@ -107,21 +108,33 @@ Cliente buscarCliente(int codigo) {
 
 // Função para listar clientes
 void listarClientes() {
-    exibirCabecalho("LISTA DE CLIENTES");
+    exibirCabecalho("LISTA DE CLIENTES CADASTRADOS");
     
     std::ifstream arquivo(ARQUIVO_CLIENTES, std::ios::binary);
     if (!arquivo.is_open()) {
         exibirMensagem("Erro ao abrir arquivo de clientes.", true);
+        pausar();
         return;
     }
     
     Cliente cliente;
     bool encontrouClientes = false;
+    int contador = 0;
+    
+    // Cabeçalho da tabela
+    std::cout << std::left << std::setw(8) << "Código" 
+              << std::setw(25) << "Nome" 
+              << std::setw(30) << "Endereço" 
+              << std::setw(15) << "Telefone" << "\n";
+    std::cout << std::string(78, '=') << "\n";
     
     while (arquivo.read(reinterpret_cast<char*>(&cliente), sizeof(Cliente))) {
         if (cliente.validar()) {
-            std::cout << "----------------------------------------\n";
-            cliente.exibir();
+            contador++;
+            std::cout << std::left << std::setw(8) << cliente.codigo
+                      << std::setw(25) << cliente.nome
+                      << std::setw(30) << cliente.endereco
+                      << std::setw(15) << cliente.telefone << "\n";
             encontrouClientes = true;
         }
     }
@@ -129,7 +142,11 @@ void listarClientes() {
     arquivo.close();
     
     if (!encontrouClientes) {
-        std::cout << "Nenhum cliente cadastrado.\n";
+        std::cout << "\n📋 Nenhum cliente cadastrado no sistema.\n";
+        std::cout << "💡 Use a opção 1 do menu principal para cadastrar clientes.\n";
+    } else {
+        std::cout << std::string(78, '=') << "\n";
+        std::cout << "📊 Total de clientes cadastrados: " << contador << "\n";
     }
     
     pausar();

@@ -151,21 +151,45 @@ bool atualizarStatusQuarto(int numero, StatusQuarto novoStatus) {
 
 // Função para listar quartos
 void listarQuartos() {
-    exibirCabecalho("LISTA DE QUARTOS");
+    exibirCabecalho("LISTA DE QUARTOS CADASTRADOS");
     
     std::ifstream arquivo(ARQUIVO_QUARTOS, std::ios::binary);
     if (!arquivo.is_open()) {
         exibirMensagem("Erro ao abrir arquivo de quartos.", true);
+        pausar();
         return;
     }
     
     Quarto quarto;
     bool encontrouQuartos = false;
+    int contador = 0;
+    int quartosDisponiveis = 0;
+    int quartosOcupados = 0;
+    float valorMedio = 0.0f;
+    
+    // Cabeçalho da tabela
+    std::cout << std::left << std::setw(8) << "Número" 
+              << std::setw(12) << "Hóspedes" 
+              << std::setw(15) << "Diária"
+              << std::setw(12) << "Status" << "\n";
+    std::cout << std::string(47, '=') << "\n";
     
     while (arquivo.read(reinterpret_cast<char*>(&quarto), sizeof(Quarto))) {
         if (quarto.validar()) {
-            std::cout << "----------------------------------------\n";
-            quarto.exibir();
+            contador++;
+            valorMedio += quarto.valorDiaria;
+            
+            if (quarto.status == DESOCUPADO) {
+                quartosDisponiveis++;
+            } else {
+                quartosOcupados++;
+            }
+            
+            std::cout << std::left << std::setw(8) << quarto.numero
+                      << std::setw(12) << quarto.maxHospedes
+                      << "R$ " << std::fixed << std::setprecision(2) 
+                      << std::setw(12) << quarto.valorDiaria
+                      << (quarto.status == DESOCUPADO ? "🟢 Livre" : "🔴 Ocupado") << "\n";
             encontrouQuartos = true;
         }
     }
@@ -173,7 +197,22 @@ void listarQuartos() {
     arquivo.close();
     
     if (!encontrouQuartos) {
-        std::cout << "Nenhum quarto cadastrado.\n";
+        std::cout << "\n🏨 Nenhum quarto cadastrado no sistema.\n";
+        std::cout << "💡 Use a opção 3 do menu principal para cadastrar quartos.\n";
+    } else {
+        std::cout << std::string(47, '=') << "\n";
+        std::cout << "📊 ESTATÍSTICAS DOS QUARTOS:\n";
+        std::cout << "🏨 Total de quartos: " << contador << "\n";
+        std::cout << "🟢 Quartos disponíveis: " << quartosDisponiveis << "\n";
+        std::cout << "🔴 Quartos ocupados: " << quartosOcupados << "\n";
+        std::cout << "💰 Valor médio da diária: R$ " << std::fixed 
+                  << std::setprecision(2) << (valorMedio / contador) << "\n";
+        
+        if (quartosDisponiveis > 0) {
+            std::cout << "✅ Taxa de ocupação: " << std::fixed 
+                      << std::setprecision(1) 
+                      << ((float)quartosOcupados / contador * 100) << "%\n";
+        }
     }
     
     pausar();

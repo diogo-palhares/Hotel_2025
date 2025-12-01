@@ -148,7 +148,6 @@ void limparTela() {
 
 void pausar() {
     std::cout << "\nPressione Enter para continuar...";
-    // Limpar qualquer coisa que esteja no buffer e esperar Enter
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
@@ -172,11 +171,27 @@ void exibirMensagem(const std::string& mensagem, bool erro) {
 // Funções de menu
 void exibirMenuPrincipal() {
     exibirCabecalho("MENU PRINCIPAL");
+    std::cout << "=== CADASTROS ===\n";
     std::cout << "1. Cadastrar Cliente\n";
     std::cout << "2. Cadastrar Funcionário\n";
     std::cout << "3. Cadastrar Quarto\n";
-    std::cout << "4. Cadastrar Estadia\n";
-    std::cout << "5. Sair\n\n";
+    std::cout << "4. Cadastrar Estadia\n\n";
+    std::cout << "=== CONSULTAS ===\n";
+    std::cout << "5. Listar Clientes\n";
+    std::cout << "6. Listar Funcionários\n";
+    std::cout << "7. Listar Quartos\n";
+    std::cout << "8. Listar Estadias\n\n";
+    std::cout << "=== SISTEMA ===\n";
+    std::cout << "9. Sair\n\n";
+}
+
+void exibirMenuListagem() {
+    exibirCabecalho("MENU DE CONSULTAS");
+    std::cout << "1. Listar Clientes\n";
+    std::cout << "2. Listar Funcionários\n";
+    std::cout << "3. Listar Quartos\n";
+    std::cout << "4. Listar Estadias\n";
+    std::cout << "5. Voltar ao Menu Principal\n\n";
 }
 
 int lerOpcaoMenu(int minOpcao, int maxOpcao) {

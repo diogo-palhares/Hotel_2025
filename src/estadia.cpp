@@ -220,27 +220,54 @@ Estadia buscarEstadia(int codigo) {
 
 // Função para listar estadias
 void listarEstadias() {
-    exibirCabecalho("LISTA DE ESTADIAS");
+    exibirCabecalho("LISTA DE ESTADIAS CADASTRADAS");
     
     std::ifstream arquivo(ARQUIVO_ESTADIAS, std::ios::binary);
     if (!arquivo.is_open()) {
         exibirMensagem("Erro ao abrir arquivo de estadias.", true);
+        pausar();
         return;
     }
     
     Estadia estadia;
     bool encontrouEstadias = false;
+    int contador = 0;
+    float faturamentoTotal = 0.0f;
+    int totalDiarias = 0;
+    
+    // Cabeçalho da tabela
+    std::cout << std::left << std::setw(6) << "Cód" 
+              << std::setw(8) << "Cliente" 
+              << std::setw(8) << "Quarto"
+              << std::setw(8) << "Hósp."
+              << std::setw(12) << "Entrada"
+              << std::setw(12) << "Saída"
+              << std::setw(6) << "Diár."
+              << std::setw(12) << "Valor Total" << "\n";
+    std::cout << std::string(72, '=') << "\n";
     
     while (arquivo.read(reinterpret_cast<char*>(&estadia), sizeof(Estadia))) {
         if (estadia.validar()) {
-            std::cout << "========================================\n";
-            estadia.exibir();
+            contador++;
+            faturamentoTotal += estadia.valorTotal;
+            totalDiarias += estadia.quantidadeDiarias;
             
-            // Mostrar dados do cliente
+            std::cout << std::left << std::setw(6) << estadia.codigoEstadia
+                      << std::setw(8) << estadia.codigoCliente
+                      << std::setw(8) << estadia.numeroQuarto
+                      << std::setw(8) << estadia.quantidadeHospedes
+                      << std::setw(12) << estadia.dataEntrada.toString()
+                      << std::setw(12) << estadia.dataSaida.toString()
+                      << std::setw(6) << estadia.quantidadeDiarias
+                      << "R$ " << std::fixed << std::setprecision(2) 
+                      << estadia.valorTotal << "\n";
+            
+            // Mostrar nome do cliente
             Cliente cliente = buscarCliente(estadia.codigoCliente);
             if (cliente.validar()) {
-                std::cout << "Cliente: " << cliente.nome << "\n";
+                std::cout << "      👤 Cliente: " << cliente.nome << "\n";
             }
+            std::cout << "\n";
             
             encontrouEstadias = true;
         }
@@ -249,7 +276,19 @@ void listarEstadias() {
     arquivo.close();
     
     if (!encontrouEstadias) {
-        std::cout << "Nenhuma estadia cadastrada.\n";
+        std::cout << "\n🏨 Nenhuma estadia cadastrada no sistema.\n";
+        std::cout << "💡 Use a opção 4 do menu principal para cadastrar estadias.\n";
+    } else {
+        std::cout << std::string(72, '=') << "\n";
+        std::cout << "📊 ESTATÍSTICAS DAS ESTADIAS:\n";
+        std::cout << "🏨 Total de estadias: " << contador << "\n";
+        std::cout << "🛏️  Total de diárias vendidas: " << totalDiarias << "\n";
+        std::cout << "💰 Faturamento total: R$ " << std::fixed 
+                  << std::setprecision(2) << faturamentoTotal << "\n";
+        std::cout << "📈 Valor médio por estadia: R$ " << std::fixed 
+                  << std::setprecision(2) << (faturamentoTotal / contador) << "\n";
+        std::cout << "📊 Média de diárias por estadia: " << std::fixed 
+                  << std::setprecision(1) << ((float)totalDiarias / contador) << "\n";
     }
     
     pausar();

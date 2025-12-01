@@ -29,6 +29,7 @@ void exibirMensagem(const std::string& mensagem, bool erro = false);
 
 // Funções de menu
 void exibirMenuPrincipal();
+void exibirMenuListagem();
 int lerOpcaoMenu(int minOpcao, int maxOpcao);
 
 #endif

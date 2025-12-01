@@ -16,7 +16,7 @@ int main() {
         exibirMenuPrincipal();
         
         // Ler opção do usuário
-        opcao = lerOpcaoMenu(1, 5);
+        opcao = lerOpcaoMenu(1, 9);
         
         // Processar opção escolhida
         switch (opcao) {
@@ -37,6 +37,22 @@ int main() {
                 break;
                 
             case 5:
+                listarClientes();
+                break;
+                
+            case 6:
+                listarFuncionarios();
+                break;
+                
+            case 7:
+                listarQuartos();
+                break;
+                
+            case 8:
+                listarEstadias();
+                break;
+                
+            case 9:
                 exibirCabecalho("SAINDO DO SISTEMA");
                 exibirMensagem("Obrigado por usar o Sistema Hotel Descanso Garantido!");
                 std::cout << "\nAté logo! 👋\n\n";
@@ -48,7 +64,7 @@ int main() {
                 break;
         }
         
-    } while (opcao != 5);
+    } while (opcao != 9);
     
     return 0;
 }
