@@ -1,6 +1,6 @@
 # Arquitetura do Sistema
 
-## 🏗️ Estrutura
+## Estrutura
 
 ```
 ┌─────────────────┐
@@ -14,7 +14,7 @@
 └─────────────────┘
 ```
 
-## 📁 Organização
+## Organização
 
 ```
 src/
@@ -35,13 +35,13 @@ data/
 └── estadias.dat
 ```
 
-## 🔗 Dependências
+## Dependências
 
 - **main.cpp** → todos os módulos
 - **estadia.cpp** → cliente.cpp + quarto.cpp
 - **todos** → utils.cpp
 
-## 💾 Acesso Direto
+## Acesso Direto
 
 - **Registros fixos**: `sizeof(struct)`
 - **Posicionamento**: `seekp(pos * sizeof(struct))`
