@@ -1,6 +1,6 @@
 # Formato dos Arquivos
 
-## 📁 Arquivos Binários
+## Arquivos Binários
 
 | Arquivo | Struct | Tamanho | Campos Principais |
 |---------|--------|---------|-------------------|
@@ -9,7 +9,7 @@
 | `quartos.dat` | Quarto | 16 bytes | numero, maxHospedes, valorDiaria, status |
 | `estadias.dat` | Estadia | 52 bytes | codigos, datas, quantidades, valores |
 
-## 💾 Estruturas
+## Estruturas
 
 ### Cliente (324 bytes)
 ```cpp
@@ -45,7 +45,7 @@ struct Estadia {
 };
 ```
 
-## 🔧 Acesso Direto
+## Acesso Direto
 
 ### Posicionamento
 ```cpp
@@ -64,14 +64,14 @@ arquivo.write(reinterpret_cast<const char*>(&objeto), sizeof(objeto));
 arquivo.read(reinterpret_cast<char*>(&objeto), sizeof(objeto));
 ```
 
-## 📊 Características
+## Características
 
 ### Vantagens
-- ✅ Acesso O(1) por posição
-- ✅ Atualização in-place
-- ✅ Simplicidade
+- Acesso O(1) por posição
+- Atualização in-place
+- Simplicidade
 
 ### Limitações
-- ❌ Campos de tamanho fixo
-- ❌ Busca sequencial por conteúdo
-- ❌ Sem compressão
+- Campos de tamanho fixo
+- Busca sequencial por conteúdo
+- Sem compressão
