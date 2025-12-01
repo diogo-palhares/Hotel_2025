@@ -5,10 +5,10 @@
 int main() {
     exibirCabecalho("SISTEMA DE TESTES AUTOMATIZADOS");
     
-    std::cout << "🎯 Este programa executará todos os testes automatizados" << std::endl;
+    std::cout << "Este programa executará todos os testes automatizados" << std::endl;
     std::cout << "   do Sistema Hotel Descanso Garantido." << std::endl;
     std::cout << std::endl;
-    std::cout << "⚠️  ATENÇÃO: Os arquivos de dados serão limpos para os testes!" << std::endl;
+    std::cout << "ATENÇÃO: Os arquivos de dados serão limpos para os testes!" << std::endl;
     std::cout << "   Faça backup se necessário." << std::endl;
     std::cout << std::endl;
     
