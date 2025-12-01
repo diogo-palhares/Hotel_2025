@@ -1,171 +1,84 @@
 # Sistema Hotel Descanso Garantido
 
-## Descrição
-Sistema de gerenciamento de hotel com 4 funcionalidades principais:
-1. Cadastro de Clientes
-2. Cadastro de Funcionários  
-3. Cadastro de Quartos
-4. Cadastro de Estadias
+Sistema de gerenciamento de hotel desenvolvido em C++ com persistência em arquivos binários e acesso direto aos dados.
 
-## Estrutura do Projeto
-```
-projeto-hotel/
-├── src/                    # Código fonte (.cpp)
-├── include/               # Headers (.h)
-├── data/                  # Arquivos de dados binários
-├── docs/                  # Documentação
-├── planejamento/          # Backlog e sprints
-└── README.md             # Este arquivo
-```
+## 🚀 Funcionalidades
 
-## Instalação e Configuração por Sistema Operacional
+### Cadastros:
+- ✅ Clientes (código automático)
+- ✅ Funcionários (controle salarial)  
+- ✅ Quartos (gestão de ocupação)
+- ✅ Estadias (cálculo automático de diárias)
 
-### 🍎 **macOS**
+### Consultas:
+- ✅ Listagem com estatísticas em tempo real
+- ✅ Formatação tabular e indicadores visuais
+- ✅ Relatórios de ocupação e faturamento
 
-**Ferramentas necessárias:**
+## 🔧 Compilação e Execução
+
+### Compilar:
 ```bash
-# Instalar Xcode Command Line Tools
-xcode-select --install
-
-# Verificar instalação
-clang++ --version
-```
-
-**Compilação:**
-```bash
-clang++ -std=c++11 -Wall -Wextra -g -o hotel src/*.cpp -I include/
-```
-
-**Execução:**
-```bash
-./hotel
-```
-
----
-
-### 🪟 **Windows**
-
-**Opção 1: MinGW-w64 (Recomendado)**
-1. Baixar e instalar MinGW-w64: https://www.mingw-w64.org/downloads/
-2. Ou instalar via MSYS2: https://www.msys2.org/
-3. Adicionar ao PATH do sistema
-
-**Verificar instalação:**
-```cmd
-g++ --version
-```
-
-**Compilação:**
-```cmd
-g++ -std=c++11 -Wall -Wextra -g -o hotel.exe src/*.cpp -I include/
-```
-
-**Execução:**
-```cmd
-hotel.exe
-```
-
-**Opção 2: Visual Studio Community (Alternativa)**
-1. Instalar Visual Studio Community (gratuito)
-2. Incluir "Desktop development with C++"
-3. Usar Developer Command Prompt
-
-**Compilação (Visual Studio):**
-```cmd
-cl /EHsc /std:c++11 /I include src/*.cpp /Fe:hotel.exe
-```
-
----
-
-### 🐧 **Linux (Ubuntu/Debian)**
-
-**Ferramentas necessárias:**
-```bash
-# Instalar build essentials
-sudo apt update
-sudo apt install build-essential
-
-# Verificar instalação
-g++ --version
-```
-
-**Compilação:**
-```bash
-g++ -std=c++11 -Wall -Wextra -g -o hotel src/*.cpp -I include/
-```
-
-**Execução:**
-```bash
-./hotel
-```
-
----
-
-## Comandos Resumidos por Sistema
-
-| Sistema | Compilador | Comando de Compilação | Execução |
-|---------|------------|----------------------|----------|
-| **macOS** | clang++ | `clang++ -std=c++11 -Wall -Wextra -g -o hotel src/*.cpp -I include/` | `./hotel` |
-| **Windows** | g++ (MinGW) | `g++ -std=c++11 -Wall -Wextra -g -o hotel.exe src/*.cpp -I include/` | `hotel.exe` |
-| **Linux** | g++ | `g++ -std=c++11 -Wall -Wextra -g -o hotel src/*.cpp -I include/` | `./hotel` |
-
-## Flags de Compilação Explicadas
-
-- `-std=c++11`: Usa padrão C++11
-- `-Wall`: Ativa avisos importantes
-- `-Wextra`: Ativa avisos extras
-- `-g`: Inclui informações de debug
-- `-o hotel`: Nome do executável de saída
-- `-I include/`: Inclui diretório de headers
-
-
-**macOS:**
-```bash
+# macOS/Linux
 clang++ -std=c++11 -Wall -Wextra -O2 -o hotel src/*.cpp -I include/
-```
 
-**Windows:**
-```cmd
+# Windows (MinGW)
 g++ -std=c++11 -Wall -Wextra -O2 -o hotel.exe src/*.cpp -I include/
 ```
 
-**Linux:**
+### Executar:
 ```bash
-g++ -std=c++11 -Wall -Wextra -O2 -o hotel src/*.cpp -I include/
+./hotel        # macOS/Linux
+hotel.exe      # Windows
 ```
 
-## Solução de Problemas Comuns
+## 🧪 Testes Automatizados
 
-### Windows - "g++ não é reconhecido"
-```cmd
-# Verificar se MinGW está no PATH
-echo %PATH%
-
-# Adicionar ao PATH (exemplo):
-set PATH=%PATH%;C:\mingw64\bin
+```bash
+cd tests
+./executar_testes.sh    # Linux/macOS
+executar_testes.bat     # Windows
 ```
 
-### macOS - "clang++ não encontrado"
-```bash
-# Instalar Xcode Command Line Tools
-xcode-select --install
+**15 testes** cobrindo todas as funcionalidades principais.
+
+## 📋 Pré-requisitos
+
+| Sistema | Ferramenta | Instalação |
+|---------|------------|------------|
+| **macOS** | Xcode Command Line Tools | `xcode-select --install` |
+| **Windows** | MinGW-w64 | [Download](https://www.mingw-w64.org/downloads/) |
+| **Linux** | build-essential | `sudo apt install build-essential` |
+
+## 🏗️ Estrutura
+
+```
+projeto-hotel/
+├── src/           # Código fonte (.cpp)
+├── include/       # Headers (.h)
+├── data/          # Arquivos binários
+├── tests/         # Testes automatizados
+└── README.md      # Este arquivo
 ```
 
-### Linux - "g++ não encontrado"
+## 🎯 Características Técnicas
+
+- **Acesso direto** a arquivos binários
+- **Registros de tamanho fixo** com `seekp()/seekg()`
+- **Validações robustas** de entrada
+- **Interface moderna** com menu organizado
+- **Multiplataforma** (Windows/macOS/Linux)
+
+## 🐛 Problemas Comuns
+
+**Compilador não encontrado:**
 ```bash
-sudo apt install build-essential
+# macOS: xcode-select --install
+# Linux: sudo apt install build-essential
+# Windows: Adicionar MinGW ao PATH
 ```
 
-### Erro de permissão (macOS/Linux)
+**Erro de permissão:**
 ```bash
-# Dar permissão de execução
 chmod +x hotel
 ```
-
-## Estrutura de Desenvolvimento
-
-1. **Headers (.h)** → `include/`
-2. **Implementações (.cpp)** → `src/`
-3. **Dados binários** → `data/`
-4. **Documentação** → `docs/`
-5. **Planejamento** → `planejamento/`
