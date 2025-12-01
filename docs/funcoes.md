@@ -1,6 +1,6 @@
 # Funções Principais
 
-## 👤 Cliente
+## Cliente
 
 ### `int cadastrarCliente()`
 - **Função**: Cadastra novo cliente
@@ -20,7 +20,7 @@
 
 ---
 
-## 👷 Funcionário
+## Funcionário
 
 ### `int cadastrarFuncionario()`
 - **Função**: Cadastra novo funcionário
@@ -32,7 +32,7 @@
 
 ---
 
-## 🏨 Quarto
+## Quarto
 
 ### `int cadastrarQuarto()`
 - **Função**: Cadastra novo quarto
@@ -51,7 +51,7 @@
 
 ---
 
-## 🛏️ Estadia
+## Estadia
 
 ### `int cadastrarEstadia()`
 - **Função**: Cadastra reserva completa
@@ -69,7 +69,7 @@
 
 ---
 
-## 🛠️ Utilitários
+## Utilitários
 
 ### `int lerInteiroPositivo(const string& prompt)`
 - **Função**: Lê número positivo com validação
@@ -84,7 +84,7 @@
 
 ---
 
-## 📊 Validações
+## Validações
 
 ### `bool Struct::validar() const`
 Cada struct tem validação própria:
