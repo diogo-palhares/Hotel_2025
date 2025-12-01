@@ -42,6 +42,14 @@ executar_testes.bat     # Windows
 
 **15 testes** cobrindo todas as funcionalidades principais.
 
+## 📚 Documentação
+
+- [Manual do Usuário](docs/manual.md) - Como usar o sistema
+- [Arquitetura](docs/arquitetura.md) - Estrutura técnica
+- [Funções](docs/funcoes.md) - Referência das funções
+- [Arquivos](docs/arquivos.md) - Formato dos dados
+- [Testes](docs/testes.md) - Casos de teste
+
 ## 📋 Pré-requisitos
 
 | Sistema | Ferramenta | Instalação |
@@ -58,6 +66,7 @@ projeto-hotel/
 ├── include/       # Headers (.h)
 ├── data/          # Arquivos binários
 ├── tests/         # Testes automatizados
+├── docs/          # Documentação técnica
 └── README.md      # Este arquivo
 ```
 
