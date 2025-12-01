@@ -2,9 +2,9 @@
 **Duração:** 3 dias  
 **Objetivo:** Implementar listagens com estatísticas
 
-## 📋 Tasks da Sprint
+## Tasks da Sprint
 
-### ✅ Concluídas
+### Concluídas
 - [x] **Task 4.1:** Implementar listarClientes() com formatação tabular
 - [x] **Task 4.2:** Implementar listarFuncionarios() com estatísticas salariais
 - [x] **Task 4.3:** Implementar listarQuartos() com indicadores de status
@@ -16,13 +16,13 @@
 - [x] **Task 4.9:** Implementar contadores e médias automáticas
 - [x] **Task 4.10:** Corrigir problema do Enter duplo na função pausar()
 
-## 📊 Resultado da Sprint
+## Resultado da Sprint
 - **Tasks planejadas:** 10
 - **Tasks concluídas:** 10
 - **Taxa de sucesso:** 100%
 - **Entregável:** Sistema completo com interface melhorada
 
-## 🎯 Retrospectiva
+## Retrospectiva
 **O que funcionou bem:**
 - Interface ficou mais profissional
 - Estatísticas agregam valor ao sistema
