@@ -276,18 +276,18 @@ void listarEstadias() {
     arquivo.close();
     
     if (!encontrouEstadias) {
-        std::cout << "\n🏨 Nenhuma estadia cadastrada no sistema.\n";
-        std::cout << "💡 Use a opção 4 do menu principal para cadastrar estadias.\n";
+        std::cout << "\nNenhuma estadia cadastrada no sistema.\n";
+        std::cout << " Use a opção 4 do menu principal para cadastrar estadias.\n";
     } else {
         std::cout << std::string(72, '=') << "\n";
-        std::cout << "📊 ESTATÍSTICAS DAS ESTADIAS:\n";
-        std::cout << "🏨 Total de estadias: " << contador << "\n";
-        std::cout << "🛏️  Total de diárias vendidas: " << totalDiarias << "\n";
-        std::cout << "💰 Faturamento total: R$ " << std::fixed 
+        std::cout << " ESTATÍSTICAS DAS ESTADIAS:\n";
+        std::cout << "Total de estadias: " << contador << "\n";
+        std::cout << "Total de diárias vendidas: " << totalDiarias << "\n";
+        std::cout << "Faturamento total: R$ " << std::fixed 
                   << std::setprecision(2) << faturamentoTotal << "\n";
-        std::cout << "📈 Valor médio por estadia: R$ " << std::fixed 
+        std::cout << "Valor médio por estadia: R$ " << std::fixed 
                   << std::setprecision(2) << (faturamentoTotal / contador) << "\n";
-        std::cout << "📊 Média de diárias por estadia: " << std::fixed 
+        std::cout << "Média de diárias por estadia: " << std::fixed 
                   << std::setprecision(1) << ((float)totalDiarias / contador) << "\n";
     }
     
