@@ -1,5 +1,7 @@
 hotel
+testes
 hotel.exe
+testes.exe
 *.exe
 *.dSYM/
 .vscode/
