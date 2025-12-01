@@ -1,0 +1,11 @@
+hotel
+hotel.exe
+*.exe
+*.dSYM/
+.vscode/
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+*.o
+*.obj
