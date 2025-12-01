@@ -15,7 +15,6 @@ projeto-hotel/
 ├── data/                  # Arquivos de dados binários
 ├── docs/                  # Documentação
 ├── planejamento/          # Backlog e sprints
-├── .vscode/              # Configurações do VS Code
 └── README.md             # Este arquivo
 ```
 
