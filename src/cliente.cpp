@@ -142,11 +142,11 @@ void listarClientes() {
     arquivo.close();
     
     if (!encontrouClientes) {
-        std::cout << "\n📋 Nenhum cliente cadastrado no sistema.\n";
-        std::cout << "💡 Use a opção 1 do menu principal para cadastrar clientes.\n";
+        std::cout << "\n Nenhum cliente cadastrado no sistema.\n";
+        std::cout << "Use a opção 1 do menu principal para cadastrar clientes.\n";
     } else {
         std::cout << std::string(78, '=') << "\n";
-        std::cout << "📊 Total de clientes cadastrados: " << contador << "\n";
+        std::cout << "Total de clientes cadastrados: " << contador << "\n";
     }
     
     pausar();
