@@ -153,14 +153,14 @@ void listarFuncionarios() {
     arquivo.close();
     
     if (!encontrouFuncionarios) {
-        std::cout << "\n👥 Nenhum funcionário cadastrado no sistema.\n";
-        std::cout << "💡 Use a opção 2 do menu principal para cadastrar funcionários.\n";
+        std::cout << "\nNenhum funcionário cadastrado no sistema.\n";
+        std::cout << "Use a opção 2 do menu principal para cadastrar funcionários.\n";
     } else {
         std::cout << std::string(80, '=') << "\n";
-        std::cout << "📊 Total de funcionários: " << contador << "\n";
-        std::cout << "💰 Folha de pagamento total: R$ " << std::fixed 
+        std::cout << "Total de funcionários: " << contador << "\n";
+        std::cout << "Folha de pagamento total: R$ " << std::fixed 
                   << std::setprecision(2) << totalSalarios << "\n";
-        std::cout << "📈 Salário médio: R$ " << std::fixed 
+        std::cout << "Salário médio: R$ " << std::fixed 
                   << std::setprecision(2) << (totalSalarios / contador) << "\n";
     }
     
