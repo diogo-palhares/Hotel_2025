@@ -1,6 +1,6 @@
 # Testes
 
-## 🧪 Executar Testes
+## Executar Testes
 
 ```bash
 cd tests
@@ -8,7 +8,7 @@ cd tests
 executar_testes.bat     # Windows
 ```
 
-## 📊 Testes Automatizados (15 total)
+## Testes Automatizados (15 total)
 
 ### Arquivos
 - **Inicialização**: Criação dos arquivos .dat
@@ -30,7 +30,7 @@ executar_testes.bat     # Windows
 - **Cálculos**: Diárias entre datas
 - **Serialização**: Conversão binária
 
-## 📋 Casos de Teste Manuais
+## Casos de Teste Manuais
 
 ### CT1: Fluxo Completo
 1. Cadastrar cliente "João Silva"
@@ -49,7 +49,7 @@ executar_testes.bat     # Windows
 2. Verificar cálculos nas listagens
 3. Confirmar formatação e estatísticas
 
-## ✅ Critérios de Sucesso
+## Critérios de Sucesso
 
 - Taxa de sucesso ≥ 95%
 - Todos os casos de uso funcionando
