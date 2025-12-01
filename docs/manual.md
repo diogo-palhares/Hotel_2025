@@ -1,6 +1,6 @@
 # Manual do Usuário
 
-## 🚀 Como Usar
+## Como Usar
 
 ### Executar
 ```bash
@@ -21,7 +21,7 @@ hotel.exe      # Windows
 9. Sair
 ```
 
-## 📋 Fluxo Recomendado
+## Fluxo Recomendado
 
 ### 1. Primeiro Uso
 1. **Cadastrar Quartos** (ex: 101, 102, 201)
@@ -44,7 +44,7 @@ hotel.exe      # Windows
 - Sistema busca quarto disponível automaticamente
 - Calcula diárias e valor total automaticamente
 
-## 📊 Listagens
+## Listagens
 
 ### Clientes
 - Tabela com todos os clientes
@@ -56,7 +56,7 @@ hotel.exe      # Windows
 - Salário médio
 
 ### Quartos
-- Status visual: 🟢 Livre / 🔴 Ocupado
+- Status visual: Livre / Ocupado
 - Taxa de ocupação
 - Valor médio das diárias
 
@@ -65,7 +65,7 @@ hotel.exe      # Windows
 - Faturamento total
 - Estatísticas de ocupação
 
-## ⚠️ Validações
+## Validações
 
 ### Mensagens de Erro Comuns
 - "Já existe um quarto com este número"
@@ -74,7 +74,7 @@ hotel.exe      # Windows
 - "Data de saída deve ser posterior à entrada"
 
 ### Dicas
-- ✅ Cadastre quartos antes de fazer reservas
-- ✅ Use números sequenciais para quartos
-- ✅ Verifique códigos de clientes nas listagens
-- ✅ Datas no formato DD/MM/AAAA
+- Cadastre quartos antes de fazer reservas
+- Use números sequenciais para quartos
+- Verifique códigos de clientes nas listagens
+- Datas no formato DD/MM/AAAA
