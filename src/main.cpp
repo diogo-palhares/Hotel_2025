@@ -55,7 +55,7 @@ int main() {
             case 9:
                 exibirCabecalho("SAINDO DO SISTEMA");
                 exibirMensagem("Obrigado por usar o Sistema Hotel Descanso Garantido!");
-                std::cout << "\nAté logo! 👋\n\n";
+                std::cout << "\nAté logo!\n\n";
                 break;
                 
             default:
