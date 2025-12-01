@@ -41,19 +41,19 @@ public:
 // Macros para facilitar os testes
 #define ASSERT_TRUE(condicao, mensagem) \
     if (!(condicao)) { \
-        std::cout << "❌ FALHOU: " << mensagem << std::endl; \
+        std::cout << "FALHOU: " << mensagem << std::endl; \
         return false; \
     }
 
 #define ASSERT_FALSE(condicao, mensagem) \
     if (condicao) { \
-        std::cout << "❌ FALHOU: " << mensagem << std::endl; \
+        std::cout << "FALHOU: " << mensagem << std::endl; \
         return false; \
     }
 
 #define ASSERT_EQUAL(esperado, atual, mensagem) \
     if ((esperado) != (atual)) { \
-        std::cout << "❌ FALHOU: " << mensagem << " (Esperado: " << esperado << ", Atual: " << atual << ")" << std::endl; \
+        std::cout << "FALHOU: " << mensagem << " (Esperado: " << esperado << ", Atual: " << atual << ")" << std::endl; \
         return false; \
     }
 
