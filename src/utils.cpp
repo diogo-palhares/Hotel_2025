@@ -148,8 +148,8 @@ void limparTela() {
 
 void pausar() {
     std::cout << "\nPressione Enter para continuar...";
+    // Limpar qualquer coisa que esteja no buffer e esperar Enter
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    std::cin.get();
 }
 
 void exibirCabecalho(const std::string& titulo) {
