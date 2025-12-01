@@ -2,20 +2,20 @@
 
 Sistema de gerenciamento de hotel desenvolvido em C++ com persistência em arquivos binários e acesso direto aos dados.
 
-## 🚀 Funcionalidades
+## Funcionalidades
 
 ### Cadastros:
-- ✅ Clientes (código automático)
-- ✅ Funcionários (controle salarial)  
-- ✅ Quartos (gestão de ocupação)
-- ✅ Estadias (cálculo automático de diárias)
+-  Clientes (código automático)
+-  Funcionários (controle salarial)  
+-  Quartos (gestão de ocupação)
+-  Estadias (cálculo automático de diárias)
 
 ### Consultas:
-- ✅ Listagem com estatísticas em tempo real
-- ✅ Formatação tabular e indicadores visuais
-- ✅ Relatórios de ocupação e faturamento
+-  Listagem com estatísticas em tempo real
+-  Formatação tabular e indicadores visuais
+-  Relatórios de ocupação e faturamento
 
-## 🔧 Compilação e Execução
+##  Compilação e Execução
 
 ### Compilar:
 ```bash
@@ -32,7 +32,7 @@ g++ -std=c++11 -Wall -Wextra -O2 -o hotel.exe src/*.cpp -I include/
 hotel.exe      # Windows
 ```
 
-## 🧪 Testes Automatizados
+## Testes Automatizados
 
 ```bash
 cd tests
@@ -42,7 +42,7 @@ executar_testes.bat     # Windows
 
 **15 testes** cobrindo todas as funcionalidades principais.
 
-## 📚 Documentação
+## Documentação
 
 - [Manual do Usuário](docs/manual.md) - Como usar o sistema
 - [Arquitetura](docs/arquitetura.md) - Estrutura técnica
@@ -50,7 +50,7 @@ executar_testes.bat     # Windows
 - [Arquivos](docs/arquivos.md) - Formato dos dados
 - [Testes](docs/testes.md) - Casos de teste
 
-## 📋 Pré-requisitos
+## Pré-requisitos
 
 | Sistema | Ferramenta | Instalação |
 |---------|------------|------------|
@@ -58,7 +58,7 @@ executar_testes.bat     # Windows
 | **Windows** | MinGW-w64 | [Download](https://www.mingw-w64.org/downloads/) |
 | **Linux** | build-essential | `sudo apt install build-essential` |
 
-## 🏗️ Estrutura
+## Estrutura
 
 ```
 projeto-hotel/
@@ -70,7 +70,7 @@ projeto-hotel/
 └── README.md      # Este arquivo
 ```
 
-## 🎯 Características Técnicas
+## Características Técnicas
 
 - **Acesso direto** a arquivos binários
 - **Registros de tamanho fixo** com `seekp()/seekg()`
@@ -78,7 +78,7 @@ projeto-hotel/
 - **Interface moderna** com menu organizado
 - **Multiplataforma** (Windows/macOS/Linux)
 
-## 🐛 Problemas Comuns
+## Problemas Comuns
 
 **Compilador não encontrado:**
 ```bash
