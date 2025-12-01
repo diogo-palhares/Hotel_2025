@@ -1,12 +1,12 @@
 #!/bin/bash
 
-echo "🧪 SISTEMA DE TESTES AUTOMATIZADOS"
+echo " SISTEMA DE TESTES AUTOMATIZADOS"
 echo "=================================="
 echo ""
 
 # Verificar se estamos na pasta tests
 if [ ! -f "testes.cpp" ]; then
-    echo "❌ Execute este script da pasta tests/"
+    echo "Execute este script da pasta tests/"
     echo "   cd tests && ./executar_testes.sh"
     exit 1
 fi
@@ -16,7 +16,7 @@ cd ..
 
 # Verificar se estamos na pasta raiz correta
 if [ ! -f "src/main.cpp" ]; then
-    echo "❌ Estrutura de projeto incorreta!"
+    echo "Estrutura de projeto incorreta!"
     echo "   Certifique-se de estar na pasta raiz do projeto"
     exit 1
 fi
@@ -25,7 +25,7 @@ fi
 mkdir -p tests/relatorios
 
 # Compilar programa de testes
-echo "📦 Compilando programa de testes..."
+echo "Compilando programa de testes..."
 clang++ -std=c++11 -Wall -Wextra -O2 -o testes \
     tests/main_testes.cpp \
     tests/testes.cpp \
@@ -37,11 +37,11 @@ clang++ -std=c++11 -Wall -Wextra -O2 -o testes \
     -I include/
 
 if [ $? -eq 0 ]; then
-    echo "✅ Compilação bem-sucedida!"
+    echo "Compilação bem-sucedida!"
     echo ""
     
     # Executar testes
-    echo "🚀 Executando testes..."
+    echo "Executando testes..."
     echo ""
     ./testes
     
@@ -49,14 +49,14 @@ if [ $? -eq 0 ]; then
     rm -f testes
     
     echo ""
-    echo "🎯 Testes concluídos!"
+    echo "Testes concluídos!"
     
     # Verificar se relatório foi gerado
     if [ -f "tests/relatorios/relatorio-testes.md" ]; then
-        echo "📄 Relatório disponível em: tests/relatorios/relatorio-testes.md"
+        echo "Relatório disponível em: tests/relatorios/relatorio-testes.md"
     fi
     
 else
-    echo "❌ Erro na compilação!"
+    echo "Erro na compilação!"
     exit 1
 fi
