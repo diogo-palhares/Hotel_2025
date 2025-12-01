@@ -2,9 +2,9 @@
 **Duração:** 3 dias  
 **Objetivo:** Criar fundação do sistema
 
-## 📋 Tasks da Sprint
+## Tasks da Sprint
 
-### ✅ Concluídas
+### Concluídas
 - [x] **Task 1.1:** Criar estrutura de diretórios (src/, include/, data/, docs/, tests/)
 - [x] **Task 1.2:** Definir struct Cliente no header cliente.h
 - [x] **Task 1.3:** Definir struct Funcionario no header funcionario.h  
@@ -16,13 +16,13 @@
 - [x] **Task 1.9:** Criar sistema de inicialização de arquivos
 - [x] **Task 1.10:** Configurar README.md inicial
 
-## 📊 Resultado da Sprint
+## Resultado da Sprint
 - **Tasks planejadas:** 10
 - **Tasks concluídas:** 10
 - **Taxa de sucesso:** 100%
 - **Entregável:** Estrutura base funcional
 
-## 🎯 Retrospectiva
+## Retrospectiva
 **O que funcionou bem:**
 - Definição clara das estruturas de dados
 - Separação adequada entre headers e implementação
