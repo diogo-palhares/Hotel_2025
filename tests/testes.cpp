@@ -17,9 +17,9 @@ GerenciadorTestes::GerenciadorTestes() {
 }
 
 void GerenciadorTestes::executarTeste(const std::string& nome, bool (*funcaoTeste)(), const std::string& descricao) {
-    std::cout << "🧪 Executando: " << nome << std::endl;
+    std::cout << "Executando: " << nome << std::endl;
     if (!descricao.empty()) {
-        std::cout << "   📝 " << descricao << std::endl;
+        std::cout << "   " << descricao << std::endl;
     }
     
     auto inicio = std::chrono::high_resolution_clock::now();
@@ -36,13 +36,13 @@ void GerenciadorTestes::executarTeste(const std::string& nome, bool (*funcaoTest
     res.tempoExecucao = tempoMs;
     
     if (resultado) {
-        res.mensagem = "✅ PASSOU";
+        res.mensagem = " PASSOU";
         testesPassaram++;
-        std::cout << "   ✅ PASSOU (" << std::fixed << std::setprecision(2) << tempoMs << "ms)" << std::endl;
+        std::cout << "   PASSOU (" << std::fixed << std::setprecision(2) << tempoMs << "ms)" << std::endl;
     } else {
-        res.mensagem = "❌ FALHOU";
+        res.mensagem = " FALHOU";
         testesFalharam++;
-        std::cout << "   ❌ FALHOU (" << std::fixed << std::setprecision(2) << tempoMs << "ms)" << std::endl;
+        std::cout << "   FALHOU (" << std::fixed << std::setprecision(2) << tempoMs << "ms)" << std::endl;
     }
     
     resultados.push_back(res);
@@ -88,14 +88,14 @@ void GerenciadorTestes::gerarRelatorio() {
     int total = testesPassaram + testesFalharam;
     double percentualSucesso = (total > 0) ? (double)testesPassaram / total * 100.0 : 0.0;
     
-    std::cout << "📊 RESUMO:" << std::endl;
+    std::cout << "RESUMO:" << std::endl;
     std::cout << "   Total de testes: " << total << std::endl;
-    std::cout << "   ✅ Passaram: " << testesPassaram << std::endl;
-    std::cout << "   ❌ Falharam: " << testesFalharam << std::endl;
-    std::cout << "   📈 Taxa de sucesso: " << std::fixed << std::setprecision(1) 
+    std::cout << "   Passaram: " << testesPassaram << std::endl;
+    std::cout << "   Falharam: " << testesFalharam << std::endl;
+    std::cout << "   Taxa de sucesso: " << std::fixed << std::setprecision(1) 
               << percentualSucesso << "%" << std::endl;
     
-    std::cout << "\n📋 DETALHES:" << std::endl;
+    std::cout << "\n DETALHES:" << std::endl;
     for (const auto& resultado : resultados) {
         std::cout << "   " << (resultado.passou ? "✅" : "❌") 
                   << " " << resultado.nome 
@@ -103,7 +103,7 @@ void GerenciadorTestes::gerarRelatorio() {
                   << resultado.tempoExecucao << "ms)" << std::endl;
     }
     
-    std::cout << "\n" << (testesFalharam == 0 ? "🎉 TODOS OS TESTES PASSARAM!" : "⚠️  ALGUNS TESTES FALHARAM!") << std::endl;
+    std::cout << "\n" << (testesFalharam == 0 ? " TODOS OS TESTES PASSARAM!" : "  ALGUNS TESTES FALHARAM!") << std::endl;
     std::cout << "========================================" << std::endl;
 }
 
@@ -137,10 +137,10 @@ void GerenciadorTestes::salvarRelatorio(const std::string& nomeArquivo) {
     
     arquivo << "\n## CONCLUSÃO\n\n";
     if (testesFalharam == 0) {
-        arquivo << "🎉 **TODOS OS TESTES PASSARAM!**\n\n";
+        arquivo << " **TODOS OS TESTES PASSARAM!**\n\n";
         arquivo << "O sistema está funcionando corretamente e atende a todos os requisitos testados.\n";
     } else {
-        arquivo << "⚠️ **ALGUNS TESTES FALHARAM**\n\n";
+        arquivo << " **ALGUNS TESTES FALHARAM**\n\n";
         arquivo << "Verifique os testes que falharam e corrija os problemas antes de prosseguir.\n";
     }
     
@@ -405,7 +405,7 @@ bool testeIntegridadeArquivos() {
 
 // Função principal para executar todos os testes
 void executarTodosTestes() {
-    std::cout << "🧪 INICIANDO TESTES AUTOMATIZADOS" << std::endl;
+    std::cout << "INICIANDO TESTES AUTOMATIZADOS" << std::endl;
     std::cout << "========================================" << std::endl;
     
     GerenciadorTestes gerenciador;
@@ -432,5 +432,5 @@ void executarTodosTestes() {
     gerenciador.gerarRelatorio();
     gerenciador.salvarRelatorio("relatorios/relatorio-testes.md");
     
-    std::cout << "\n📄 Relatório salvo em: tests/relatorios/relatorio-testes.md" << std::endl;
+    std::cout << "\n Relatório salvo em: tests/relatorios/relatorio-testes.md" << std::endl;
 }
